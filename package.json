@@ -1,0 +1,53 @@
+{
+  "name": "@woifes/node-yasdi",
+  "version": "1.0.1",
+  "description": "Node bindings to yasdi library",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "bin",
+    "dist",
+    "shell"
+  ],
+  "bin": {
+    "nodeYasdiShell": "./dist/shell/node-yasdi-shell.js",
+    "createYasdiIniFileContent": "./dist/shell/createYasdiIniFileContent.js"
+  },
+  "scripts": {
+    "shell": "node ./dist/shell/node-yasdi-shell.js",
+    "createIniContent": "node ./dist/shell/createYasdiIniFileContent.js",
+    "test": "jest",
+    "compile": "tsc",
+    "format": "biome format --write .",
+    "lint": "biome check --apply-unsafe .",
+    "prepare": "pnpm node-gyp configure && pnpm build && pnpm compile",
+    "node-gyp": "node-gyp",
+    "build": "node-gyp build",
+    "rebuild": "node-gyp rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/woifes/node-yasdi"
+  },
+  "author": "woifes",
+  "license": "MIT",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "debug": "^4.3.2",
+    "node-addon-api": "^4.2.0",
+    "node-gyp": "^10.0.1",
+    "runtypes": "^6.5.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.2.2",
+    "@jest/types": "^29.5.0",
+    "@types/bindings": "^1.5.1",
+    "@types/debug": "^4.1.12",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.6.2",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.5.5"
+  }
+}
