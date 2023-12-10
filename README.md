@@ -42,11 +42,11 @@ pnpm run shell <path/to/my.ini> #run the shell with a given ini file
 ## Remarks regarding yasdi and its LGPL
 *Here are the instructions how one can build a custom version of the yasdi library into this package (according to LGPL v2.1 with statically linked libraries). (It is assumed that the nodeJS related development is known.)*
 
-First you need the TypeScript version of this package which is part of a [monorepo](https://github.com/woifes/node-monorepo). The following describes where you find the different parts involved in the build:
+The following list describes where you find the different parts involved in the build:
 
 * The yasdi source code lies in the [bin](./bin/yasdi-1.8.1build9-src/) folder
 * The bindings (glue code) also lies in the [bin](./bin/yasdi-bindings/) folder \
- *This file was created by investigating the [cmakefile](./bin/yasdi-1.8.1build9-src/projects/generic-cmake/CMakeLists.txt) delivered with yasdi, some time and trial and error*
+ *This file was created by investigating the [cmakefile](./bin/yasdi-1.8.1build9-src/projects/generic-cmake/CMakeLists.txt) delivered with yasdi, some time with trial and error*
 * The build is configured via the [bindings.gyp](binding.gyp) file
 * Additionally there is an interface of the bindings for TypeScript defined in [src](./src/bindings/yasdiBindings.ts)
 
@@ -56,8 +56,6 @@ First you need the TypeScript version of this package which is part of a [monore
 For running the build see the following section.
 
 ## Running the build
-
-The project is part of a monorepo. If the project is checked out in this environment use the following scripts:
 
 Build yasdi library and bindings:
 

@@ -7,7 +7,8 @@
   "files": [
     "bin",
     "dist",
-    "shell"
+    "shell",
+    "binding.gyp"
   ],
   "bin": {
     "nodeYasdiShell": "./dist/shell/node-yasdi-shell.js",
@@ -23,7 +24,8 @@
     "prepare": "pnpm node-gyp configure && pnpm build && pnpm compile",
     "node-gyp": "node-gyp",
     "build": "node-gyp build",
-    "rebuild": "node-gyp rebuild"
+    "rebuild": "node-gyp rebuild",
+    "install": "node-gyp rebuild"
   },
   "repository": {
     "type": "git",
