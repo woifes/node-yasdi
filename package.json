@@ -25,7 +25,8 @@
     "node-gyp": "node-gyp",
     "build": "node-gyp build",
     "rebuild": "node-gyp rebuild",
-    "install": "node-gyp rebuild"
+    "install": "node-gyp rebuild",
+    "license-report": "license-report"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,7 @@
     "@types/debug": "^4.1.12",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.6.2",
+    "@woifes/license-report": "^1.0.1",
     "jest": "^27.5.1",
     "ts-jest": "^27.1.5",
     "ts-node": "^10.9.1",

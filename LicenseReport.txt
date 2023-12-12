@@ -1,0 +1,238 @@
+Dependency License Summary:
+
+MIT - 54
+Apache-2.0 - 1
+ISC - 35
+BlueOak-1.0.0 - 2
+BSD-2-Clause - 1
+
+Dependency License Tree:
+
+bindings 1.5.0 - MIT
+└── file-uri-to-path 1.0.0 - MIT
+debug 4.3.4 - MIT
+└── ms 2.1.2 - MIT
+node-addon-api 4.3.0 - MIT
+node-gyp 10.0.1 - MIT
+├── env-paths 2.2.1 - MIT
+├── exponential-backoff 3.1.1 - Apache-2.0
+├─┬ glob 10.3.10 - ISC
+│ ├─┬ foreground-child 3.1.1 - ISC
+│ │ ├─┬ cross-spawn 7.0.3 - MIT
+│ │ │ ├── path-key 3.1.1 - MIT
+│ │ │ ├─┬ shebang-command 2.0.0 - MIT
+│ │ │ │ └── shebang-regex 3.0.0 - MIT
+│ │ │ └─┬ which 2.0.2 - ISC
+│ │ │   └── isexe 2.0.0 - ISC
+│ │ └── signal-exit 4.1.0 - ISC
+│ ├─┬ jackspeak 2.3.6 - BlueOak-1.0.0
+│ │ ├─┬ @isaacs/cliui 8.0.2 - ISC
+│ │ │ ├─┬ string-width 5.1.2 - MIT
+│ │ │ │ ├── eastasianwidth 0.2.0 - MIT
+│ │ │ │ ├── emoji-regex 9.2.2 - MIT
+│ │ │ │ └─┬ strip-ansi 7.1.0 - MIT
+│ │ │ │   └── ansi-regex 6.0.1 - MIT
+│ │ │ ├─┬ string-width 4.2.3 - MIT
+│ │ │ │ ├── emoji-regex 8.0.0 - MIT
+│ │ │ │ ├── is-fullwidth-code-point 3.0.0 - MIT
+│ │ │ │ └─┬ strip-ansi 6.0.1 - MIT
+│ │ │ │   └── ansi-regex 5.0.1 - MIT
+│ │ │ ├─┬ strip-ansi 7.1.0 - MIT
+│ │ │ │ └── ansi-regex 6.0.1 - MIT
+│ │ │ ├─┬ strip-ansi 6.0.1 - MIT
+│ │ │ │ └── ansi-regex 5.0.1 - MIT
+│ │ │ ├─┬ wrap-ansi 8.1.0 - MIT
+│ │ │ │ ├── ansi-styles 6.2.1 - MIT
+│ │ │ │ ├─┬ string-width 5.1.2 - MIT
+│ │ │ │ │ ├── eastasianwidth 0.2.0 - MIT
+│ │ │ │ │ ├── emoji-regex 9.2.2 - MIT
+│ │ │ │ │ └─┬ strip-ansi 7.1.0 - MIT
+│ │ │ │ │   └── ansi-regex 6.0.1 - MIT
+│ │ │ │ └─┬ strip-ansi 7.1.0 - MIT
+│ │ │ │   └── ansi-regex 6.0.1 - MIT
+│ │ │ └─┬ wrap-ansi 7.0.0 - MIT
+│ │ │   ├─┬ ansi-styles 4.3.0 - MIT
+│ │ │   │ └─┬ color-convert 2.0.1 - MIT
+│ │ │   │   └── color-name 1.1.4 - MIT
+│ │ │   ├─┬ string-width 4.2.3 - MIT
+│ │ │   │ ├── emoji-regex 8.0.0 - MIT
+│ │ │   │ ├── is-fullwidth-code-point 3.0.0 - MIT
+│ │ │   │ └─┬ strip-ansi 6.0.1 - MIT
+│ │ │   │   └── ansi-regex 5.0.1 - MIT
+│ │ │   └─┬ strip-ansi 6.0.1 - MIT
+│ │ │     └── ansi-regex 5.0.1 - MIT
+│ │ └── @pkgjs/parseargs 0.11.0 - MIT
+│ ├─┬ minimatch 9.0.3 - ISC
+│ │ └─┬ brace-expansion 2.0.1 - MIT
+│ │   └── balanced-match 1.0.2 - MIT
+│ ├── minipass 7.0.4 - ISC
+│ └─┬ path-scurry 1.10.1 - BlueOak-1.0.0
+│   ├── lru-cache 10.1.0 - ISC
+│   └── minipass 7.0.4 - ISC
+├── graceful-fs 4.2.11 - ISC
+├─┬ make-fetch-happen 13.0.0 - ISC
+│ ├─┬ @npmcli/agent 2.2.0 - ISC
+│ │ ├─┬ agent-base 7.1.0 - MIT
+│ │ │ └─┬ debug 4.3.4 - MIT
+│ │ │   └── ms 2.1.2 - MIT
+│ │ ├─┬ http-proxy-agent 7.0.0 - MIT
+│ │ │ ├─┬ agent-base 7.1.0 - MIT
+│ │ │ │ └─┬ debug 4.3.4 - MIT
+│ │ │ │   └── ms 2.1.2 - MIT
+│ │ │ └─┬ debug 4.3.4 - MIT
+│ │ │   └── ms 2.1.2 - MIT
+│ │ ├─┬ https-proxy-agent 7.0.2 - MIT
+│ │ │ ├─┬ agent-base 7.1.0 - MIT
+│ │ │ │ └─┬ debug 4.3.4 - MIT
+│ │ │ │   └── ms 2.1.2 - MIT
+│ │ │ └─┬ debug 4.3.4 - MIT
+│ │ │   └── ms 2.1.2 - MIT
+│ │ ├── lru-cache 10.1.0 - ISC
+│ │ └─┬ socks-proxy-agent 8.0.2 - MIT
+│ │   ├─┬ agent-base 7.1.0 - MIT
+│ │   │ └─┬ debug 4.3.4 - MIT
+│ │   │   └── ms 2.1.2 - MIT
+│ │   ├─┬ debug 4.3.4 - MIT
+│ │   │ └── ms 2.1.2 - MIT
+│ │   └─┬ socks 2.7.1 - MIT
+│ │     ├── ip 2.0.0 - MIT
+│ │     └── smart-buffer 4.2.0 - MIT
+│ ├─┬ cacache 18.0.1 - ISC
+│ │ ├─┬ @npmcli/fs 3.1.0 - ISC
+│ │ │ └─┬ semver 7.5.4 - ISC
+│ │ │   └─┬ lru-cache 6.0.0 - ISC
+│ │ │     └── yallist 4.0.0 - ISC
+│ │ ├─┬ fs-minipass 3.0.3 - ISC
+│ │ │ └── minipass 7.0.4 - ISC
+│ │ ├─┬ glob 10.3.10 - ISC
+│ │ │ ├─┬ foreground-child 3.1.1 - ISC
+│ │ │ │ ├─┬ cross-spawn 7.0.3 - MIT
+│ │ │ │ │ ├── path-key 3.1.1 - MIT
+│ │ │ │ │ ├─┬ shebang-command 2.0.0 - MIT
+│ │ │ │ │ │ └── shebang-regex 3.0.0 - MIT
+│ │ │ │ │ └─┬ which 2.0.2 - ISC
+│ │ │ │ │   └── isexe 2.0.0 - ISC
+│ │ │ │ └── signal-exit 4.1.0 - ISC
+│ │ │ ├─┬ jackspeak 2.3.6 - BlueOak-1.0.0
+│ │ │ │ ├─┬ @isaacs/cliui 8.0.2 - ISC
+│ │ │ │ │ ├─┬ string-width 5.1.2 - MIT
+│ │ │ │ │ │ ├── eastasianwidth 0.2.0 - MIT
+│ │ │ │ │ │ ├── emoji-regex 9.2.2 - MIT
+│ │ │ │ │ │ └─┬ strip-ansi 7.1.0 - MIT
+│ │ │ │ │ │   └── ansi-regex 6.0.1 - MIT
+│ │ │ │ │ ├─┬ string-width 4.2.3 - MIT
+│ │ │ │ │ │ ├── emoji-regex 8.0.0 - MIT
+│ │ │ │ │ │ ├── is-fullwidth-code-point 3.0.0 - MIT
+│ │ │ │ │ │ └─┬ strip-ansi 6.0.1 - MIT
+│ │ │ │ │ │   └── ansi-regex 5.0.1 - MIT
+│ │ │ │ │ ├─┬ strip-ansi 7.1.0 - MIT
+│ │ │ │ │ │ └── ansi-regex 6.0.1 - MIT
+│ │ │ │ │ ├─┬ strip-ansi 6.0.1 - MIT
+│ │ │ │ │ │ └── ansi-regex 5.0.1 - MIT
+│ │ │ │ │ ├─┬ wrap-ansi 8.1.0 - MIT
+│ │ │ │ │ │ ├── ansi-styles 6.2.1 - MIT
+│ │ │ │ │ │ ├─┬ string-width 5.1.2 - MIT
+│ │ │ │ │ │ │ ├── eastasianwidth 0.2.0 - MIT
+│ │ │ │ │ │ │ ├── emoji-regex 9.2.2 - MIT
+│ │ │ │ │ │ │ └─┬ strip-ansi 7.1.0 - MIT
+│ │ │ │ │ │ │   └── ansi-regex 6.0.1 - MIT
+│ │ │ │ │ │ └─┬ strip-ansi 7.1.0 - MIT
+│ │ │ │ │ │   └── ansi-regex 6.0.1 - MIT
+│ │ │ │ │ └─┬ wrap-ansi 7.0.0 - MIT
+│ │ │ │ │   ├─┬ ansi-styles 4.3.0 - MIT
+│ │ │ │ │   │ └─┬ color-convert 2.0.1 - MIT
+│ │ │ │ │   │   └── color-name 1.1.4 - MIT
+│ │ │ │ │   ├─┬ string-width 4.2.3 - MIT
+│ │ │ │ │   │ ├── emoji-regex 8.0.0 - MIT
+│ │ │ │ │   │ ├── is-fullwidth-code-point 3.0.0 - MIT
+│ │ │ │ │   │ └─┬ strip-ansi 6.0.1 - MIT
+│ │ │ │ │   │   └── ansi-regex 5.0.1 - MIT
+│ │ │ │ │   └─┬ strip-ansi 6.0.1 - MIT
+│ │ │ │ │     └── ansi-regex 5.0.1 - MIT
+│ │ │ │ └── @pkgjs/parseargs 0.11.0 - MIT
+│ │ │ ├─┬ minimatch 9.0.3 - ISC
+│ │ │ │ └─┬ brace-expansion 2.0.1 - MIT
+│ │ │ │   └── balanced-match 1.0.2 - MIT
+│ │ │ ├── minipass 7.0.4 - ISC
+│ │ │ └─┬ path-scurry 1.10.1 - BlueOak-1.0.0
+│ │ │   ├── lru-cache 10.1.0 - ISC
+│ │ │   └── minipass 7.0.4 - ISC
+│ │ ├── lru-cache 10.1.0 - ISC
+│ │ ├── minipass 7.0.4 - ISC
+│ │ ├─┬ minipass-collect 2.0.1 - ISC
+│ │ │ └── minipass 7.0.4 - ISC
+│ │ ├─┬ minipass-flush 1.0.5 - ISC
+│ │ │ └─┬ minipass 3.3.6 - ISC
+│ │ │   └── yallist 4.0.0 - ISC
+│ │ ├─┬ minipass-pipeline 1.2.4 - ISC
+│ │ │ └─┬ minipass 3.3.6 - ISC
+│ │ │   └── yallist 4.0.0 - ISC
+│ │ ├─┬ p-map 4.0.0 - MIT
+│ │ │ └─┬ aggregate-error 3.1.0 - MIT
+│ │ │   ├── clean-stack 2.2.0 - MIT
+│ │ │   └── indent-string 4.0.0 - MIT
+│ │ ├─┬ ssri 10.0.5 - ISC
+│ │ │ └── minipass 7.0.4 - ISC
+│ │ ├─┬ tar 6.2.0 - ISC
+│ │ │ ├── chownr 2.0.0 - ISC
+│ │ │ ├─┬ fs-minipass 2.1.0 - ISC
+│ │ │ │ └─┬ minipass 3.3.6 - ISC
+│ │ │ │   └── yallist 4.0.0 - ISC
+│ │ │ ├── minipass 5.0.0 - ISC
+│ │ │ ├─┬ minizlib 2.1.2 - MIT
+│ │ │ │ ├─┬ minipass 3.3.6 - ISC
+│ │ │ │ │ └── yallist 4.0.0 - ISC
+│ │ │ │ └── yallist 4.0.0 - ISC
+│ │ │ ├── mkdirp 1.0.4 - MIT
+│ │ │ └── yallist 4.0.0 - ISC
+│ │ └─┬ unique-filename 3.0.0 - ISC
+│ │   └─┬ unique-slug 4.0.0 - ISC
+│ │     └── imurmurhash 0.1.4 - MIT
+│ ├── http-cache-semantics 4.1.1 - BSD-2-Clause
+│ ├── is-lambda 1.0.1 - MIT
+│ ├── minipass 7.0.4 - ISC
+│ ├─┬ minipass-fetch 3.0.4 - MIT
+│ │ ├─┬ encoding 0.1.13 - MIT
+│ │ │ └─┬ iconv-lite 0.6.3 - MIT
+│ │ │   └── safer-buffer 2.1.2 - MIT
+│ │ ├── minipass 7.0.4 - ISC
+│ │ ├─┬ minipass-sized 1.0.3 - ISC
+│ │ │ └─┬ minipass 3.3.6 - ISC
+│ │ │   └── yallist 4.0.0 - ISC
+│ │ └─┬ minizlib 2.1.2 - MIT
+│ │   ├─┬ minipass 3.3.6 - ISC
+│ │   │ └── yallist 4.0.0 - ISC
+│ │   └── yallist 4.0.0 - ISC
+│ ├─┬ minipass-flush 1.0.5 - ISC
+│ │ └─┬ minipass 3.3.6 - ISC
+│ │   └── yallist 4.0.0 - ISC
+│ ├─┬ minipass-pipeline 1.2.4 - ISC
+│ │ └─┬ minipass 3.3.6 - ISC
+│ │   └── yallist 4.0.0 - ISC
+│ ├── negotiator 0.6.3 - MIT
+│ ├─┬ promise-retry 2.0.1 - MIT
+│ │ ├── err-code 2.0.3 - MIT
+│ │ └── retry 0.12.0 - MIT
+│ └─┬ ssri 10.0.5 - ISC
+│   └── minipass 7.0.4 - ISC
+├─┬ nopt 7.2.0 - ISC
+│ └── abbrev 2.0.0 - ISC
+├── proc-log 3.0.0 - ISC
+├─┬ semver 7.5.4 - ISC
+│ └─┬ lru-cache 6.0.0 - ISC
+│   └── yallist 4.0.0 - ISC
+├─┬ tar 6.2.0 - ISC
+│ ├── chownr 2.0.0 - ISC
+│ ├─┬ fs-minipass 2.1.0 - ISC
+│ │ └─┬ minipass 3.3.6 - ISC
+│ │   └── yallist 4.0.0 - ISC
+│ ├── minipass 5.0.0 - ISC
+│ ├─┬ minizlib 2.1.2 - MIT
+│ │ ├─┬ minipass 3.3.6 - ISC
+│ │ │ └── yallist 4.0.0 - ISC
+│ │ └── yallist 4.0.0 - ISC
+│ ├── mkdirp 1.0.4 - MIT
+│ └── yallist 4.0.0 - ISC
+└─┬ which 4.0.0 - ISC
+  └── isexe 3.1.1 - ISC
+runtypes 6.7.0 - MIT
