@@ -13,6 +13,8 @@ import { Inverter } from "./inverter/Inverter";
 import { NodeYasdiConfig, tNodeYasdiConfig } from "./runtypes/NodeYasdiConfig";
 import { createYasdiIniFile } from "./util/createYasdiIniFile";
 
+const MAX_LISTENERS_BUFFER = 5;
+
 export declare interface NodeYasdi {
     /**
      * Is fired when the init process of the yasdi library is finished.
@@ -160,6 +162,9 @@ export class NodeYasdi extends EventEmitter {
     }
 
     private onInitDone() {
+        this.setMaxListeners(
+            this._config.expectedDeviceCount + MAX_LISTENERS_BUFFER,
+        );
         searchDevicesAsync(this._config.expectedDeviceCount);
         this.emit("initDone");
     }
