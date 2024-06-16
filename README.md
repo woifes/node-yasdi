@@ -16,7 +16,9 @@ _On windows I only succeeded to compile the bindings but did not try it_
 
 ## Installation
 
-Package not (yet) published
+```shell
+npm install @woifes/node-yasdi
+```
 
 ## Quick start
 
