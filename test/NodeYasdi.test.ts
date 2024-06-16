@@ -1,10 +1,15 @@
 // SPDX-FileCopyrightText: © 2022 woifes <https://github.com/woifes>
 // SPDX-License-Identifier: MIT
 
+import { once } from "events";
 import { tmpdir } from "os";
 import { join } from "path";
 import { NodeYasdi } from "../src/NodeYasdi";
-import { searchDevicesAsync, yasdiInit } from "../src/bindings/yasdiBindings";
+import {
+    searchDevicesAsync,
+    yasdiInit,
+    yasdiReset,
+} from "../src/bindings/yasdiBindings";
 import { Inverter } from "../src/inverter/Inverter";
 import { tNodeYasdiConfig } from "../src/runtypes/NodeYasdiConfig";
 import { createYasdiIniFile } from "../src/util/createYasdiIniFile";
@@ -31,6 +36,11 @@ const createYasdiIniFileMock = (
     return FULL_INI_PATH;
 });
 const YasdiInitMock = (yasdiInit as unknown as jest.Mock).mockImplementation(
+    () => {
+        return Promise.resolve();
+    },
+);
+const YasdiResetMock = (yasdiReset as unknown as jest.Mock).mockImplementation(
     () => {
         return Promise.resolve();
     },
@@ -233,5 +243,32 @@ describe("device search tests", () => {
                     .calls[0][0],
             ).toBe(33);
         });
+    });
+});
+
+describe("reset tests", () => {
+    it("should reset correctly", async () => {
+        let devSearchCb: any = () => {};
+        YasdiInitMock.mockImplementation(
+            (_iniFilePath, deviceSearchCb, _newValueCb) => {
+                devSearchCb = deviceSearchCb;
+                return Promise.resolve();
+            },
+        );
+        const ny = new NodeYasdi(TEST_ID, CONFIG);
+        await once(ny, "initDone");
+        devSearchCb({ event: "add", handle: 1, miscParam: 0 });
+        devSearchCb({ event: "add", handle: 11, miscParam: 0 });
+        devSearchCb({ event: "add", handle: 111, miscParam: 0 });
+        devSearchCb({ event: "searchEnd", handle: 3, miscParam: 0 });
+        expect(ny.serials.length).toBe(3);
+        expect(ny.handles.length).toBe(3);
+        expect(ny.deviceSearchFinished).toBe(true);
+        jest.clearAllMocks();
+        await ny.reset();
+        expect(ny.serials.length).toBe(0);
+        expect(ny.handles.length).toBe(0);
+        expect(ny.deviceSearchFinished).toBe(false);
+        expect(YasdiInitMock).toBeCalledTimes(1);
     });
 });

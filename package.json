@@ -1,6 +1,6 @@
 {
   "name": "@woifes/node-yasdi",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Node bindings to yasdi library",
   "main": "dist/index",
   "types": "dist/index",

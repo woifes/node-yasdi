@@ -8,6 +8,7 @@ import {
     DeviceDetectionEvent,
     searchDevicesAsync,
     yasdiInit,
+    yasdiReset,
 } from "./bindings/yasdiBindings";
 import { Inverter } from "./inverter/Inverter";
 import { NodeYasdiConfig, tNodeYasdiConfig } from "./runtypes/NodeYasdiConfig";
@@ -98,21 +99,7 @@ export class NodeYasdi extends EventEmitter {
             this._debug(`Use existing ini-file at ${this._iniFilePath}`);
         }
 
-        yasdiInit(
-            this._iniFilePath,
-            (event: DeviceDetectionEvent) => {
-                this.onDeviceDetection(event);
-            },
-            (...args: any[]) => {
-                this.onNewValue(...args);
-            },
-        )
-            .then(() => {
-                this.onInitDone();
-            })
-            .catch((err) => {
-                this.emit("initErr", err);
-            });
+        this.startInit();
     }
 
     /**
@@ -159,6 +146,38 @@ export class NodeYasdi extends EventEmitter {
      */
     getInverterBySerial(serial: number) {
         return this._inverterBySerial.get(serial);
+    }
+
+    /**
+     * Resets the yasdi library together with node-yasdi
+     */
+    async reset() {
+        this._inverter = new Map();
+        this._inverterBySerial = new Map();
+        this._deviceSearchFinished = false;
+        await yasdiReset();
+        this.startInit();
+    }
+
+    /**
+     * Initialization steps needed for yasdi
+     */
+    private startInit() {
+        yasdiInit(
+            this._iniFilePath,
+            (event: DeviceDetectionEvent) => {
+                this.onDeviceDetection(event);
+            },
+            (...args: any[]) => {
+                this.onNewValue(...args);
+            },
+        )
+            .then(() => {
+                this.onInitDone();
+            })
+            .catch((err) => {
+                this.emit("initErr", err);
+            });
     }
 
     private onInitDone() {
