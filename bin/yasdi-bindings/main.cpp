@@ -8,6 +8,7 @@
 #include "napi.h"
 #include "initYasdiWorker.hpp"
 #include "resetYasdiWorker.hpp"
+#include "shutdownYasdiWorker.hpp"
 #include "getChannelValueWorker.hpp"
 #include "syncFunctionBindings.hpp"
 
@@ -169,6 +170,24 @@ Value ResetYasdi(const CallbackInfo& info) {
     return env.Undefined();
 }
 
+Value ShutdownYasdi(const CallbackInfo& info) {
+    Env env = info.Env();
+    if(info.Length() != 1) {
+        Error::New(env, "Wrong number of arguments").ThrowAsJavaScriptException();
+        return env.Undefined();
+    }
+    if(!info[0].IsFunction()) {
+        TypeError::New(env, "Wrong type of Argument").ThrowAsJavaScriptException();
+        return env.Undefined();
+    }
+
+    Function finishCb = info[3].As<Function>();
+
+    ShutdownYasdiWorker* wk = new ShutdownYasdiWorker(finishCb);
+    wk->Queue();
+    return env.Undefined();
+}
+
 /**
 * Function to start async device search from nodejs
 */
@@ -216,6 +235,7 @@ Value getChannelValue(const CallbackInfo& info) {
 Object Init(Env env, Object exports) {
     exports.Set("Init", Function::New(env, InitYasdi));
     exports.Set("Reset", Function::New(env, ResetYasdi));
+    exports.Set("Shutdown", Function::New(env, ShutdownYasdi));
     exports.Set("SearchDevicesAsync", Function::New(env, searchDevicesAsync));
     exports.Set("GetChannelValue", Function::New(env, getChannelValue));
 

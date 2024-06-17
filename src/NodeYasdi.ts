@@ -9,6 +9,7 @@ import {
     searchDevicesAsync,
     yasdiInit,
     yasdiReset,
+    yasdiShutdown,
 } from "./bindings/yasdiBindings";
 import { Inverter } from "./inverter/Inverter";
 import { NodeYasdiConfig, tNodeYasdiConfig } from "./runtypes/NodeYasdiConfig";
@@ -157,6 +158,13 @@ export class NodeYasdi extends EventEmitter {
         this._deviceSearchFinished = false;
         await yasdiReset();
         this.startInit();
+    }
+
+    /**
+     * Shuts the yasdi library down
+     */
+    async shutdown() {
+        await yasdiShutdown();
     }
 
     /**

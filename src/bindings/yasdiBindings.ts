@@ -37,6 +37,8 @@ const _init = yasdiBindings.Init as (
 
 const _reset = yasdiBindings.Reset as (resetCb: () => void) => void;
 
+const _shutdown = yasdiBindings.Reset as (shutdownCb: () => void) => void;
+
 export const searchDevicesAsync = yasdiBindings.SearchDevicesAsync as (
     expectedNumberOfDevice: number,
 ) => number;
@@ -104,6 +106,18 @@ export function yasdiReset(): Promise<void> {
     return new Promise((resolve, reject) => {
         try {
             _reset(() => {
+                resolve();
+            });
+        } catch (err) {
+            reject(err);
+        }
+    });
+}
+
+export function yasdiShutdown(): Promise<void> {
+    return new Promise((resolve, reject) => {
+        try {
+            _shutdown(() => {
                 resolve();
             });
         } catch (err) {
